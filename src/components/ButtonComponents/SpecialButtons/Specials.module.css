@@ -15,4 +15,9 @@
     font-size: 30px;
     background: #0561A7;
     border-bottom: 3px solid black;
+    cursor: pointer;
+}
+
+.special_button:focus{
+    outline: none;
 }

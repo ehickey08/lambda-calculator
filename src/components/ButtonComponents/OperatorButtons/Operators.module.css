@@ -14,4 +14,9 @@
     font-size: 30px;
     background: #06B2E3;
     border-bottom: 3px solid black;
+    cursor: pointer;
+}
+
+.operator_button:focus{
+    outline:none;
 }

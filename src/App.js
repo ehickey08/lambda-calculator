@@ -8,25 +8,28 @@ import Logo from "./components/DisplayComponents/Logo";
 
 
 function App() {
-  // STEP 5 - After you get the components displaying using the provided data file, write your state hooks here.
-  // Once the state hooks are in place write some functions to hold data in state and update that data depending on what it needs to be doing
-  // Your functions should accept a parameter of the the item data being displayed to the DOM (ie - should recieve 5 if the user clicks on
-  // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
-  // Don't forget to pass the functions (and any additional data needed) to the components as props
+
 const [display, setDisplay] = useState(0)
 const [operation, setOperation] = useState()
 const [inputOne, setInputOne] = useState()
-const [nextNumber, setNextNumber] = useState(false)
+const [nextNumber, setNextNumber] = useState(true)
 const [operatorClicked, setOperatorClicked] = useState(false)
 
 function getValue(num) {
     setOperatorClicked(false)
+    let toDisplay = ''
     if(nextNumber){
-        setDisplay(+num)
+        toDisplay = num==='.' ? '0.' : +num
+        setDisplay(toDisplay)
         setNextNumber(false)
     }
-    else
-        setDisplay(Number(`${display.toString()}${num}`))
+    else{
+        toDisplay = num==='.' ? '.' : num
+        let containsDecimal = /\./.test(display) 
+        if(containsDecimal && toDisplay==='.')
+            return
+        setDisplay((`${display.toString()}${toDisplay}`))
+    }
 }
 
 function getOperator(op){
@@ -40,7 +43,7 @@ function getOperator(op){
         setInputOne(result)
     }
     else{
-        setInputOne(display)
+        setInputOne(+display)
     }
     setNextNumber(true)
     setOperation(op)
@@ -72,6 +75,8 @@ function doSpecial(char){
             setInputOne(null)
             break;
         case '+/-':
+            if(inputOne)
+                setInputOne(0-inputOne)
             setDisplay(0-display)
             break;
         case '%':

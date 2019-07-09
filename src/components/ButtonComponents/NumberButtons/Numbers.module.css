@@ -16,6 +16,11 @@
     font-size: 30px;
     background: #013984;
     border-bottom: 3px solid black;
+    cursor: pointer;
+}
+
+.number_button:focus{
+    outline: none;
 }
 
 .zero_button{

@@ -1,0 +1,11 @@
+.display{
+    background: #2E2828;
+    height: 90px;
+    border-radius: 50px;
+    text-align: right;
+    color: white;
+    line-height: 80px;
+    padding-right: 15px;
+    font-size: 45px;
+    margin: 15px 0;
+}

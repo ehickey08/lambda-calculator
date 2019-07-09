@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import styles from  "./App.module.css";
 import {Operators} from './components/ButtonComponents/OperatorButtons/Operators'
 import {Numbers} from './components/ButtonComponents/NumberButtons/Numbers'
 import {Specials} from './components/ButtonComponents/SpecialButtons/Specials'
@@ -14,20 +14,20 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
-  return (
-    <div className="container">
-      <Logo />
-      <div className="App">
+    return (
+        <div className={styles.container}>
+            <Logo />
             <Display />
-            <div className="left_column">
-                <Specials />
-                <Numbers />
+            <div className={styles.button_container}>
+                    <div className={styles.left_column}>
+                        <Specials />
+                        <Numbers />
+                    </div>
+                    <div className={styles.right_column}>
+                        <Operators />
+                    </div>
             </div>
-            <div className="right_column">
-                <Operators />
-            </div>
-      </div>
-    </div>
+        </div>
   );
 }
 

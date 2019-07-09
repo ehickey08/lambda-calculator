@@ -12,5 +12,6 @@
     border: 0;
     color: white;
     font-size: 30px;
-    background: #06B2E3
+    background: #06B2E3;
+    border-bottom: 3px solid black;
 }

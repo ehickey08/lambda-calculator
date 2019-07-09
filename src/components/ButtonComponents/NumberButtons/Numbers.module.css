@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    height: 380px;
+    justify-content: space-around;
+    align-content: space-between;
+    height: 315px;
 }
 
 .number_button{
@@ -14,5 +15,9 @@
     color: white;
     font-size: 30px;
     background: #013984;
-    margin: 0 10px;
+    border-bottom: 3px solid black;
+}
+
+.zero_button{
+    width: 160px
 }

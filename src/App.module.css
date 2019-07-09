@@ -4,11 +4,20 @@
     margin: 100px auto;
     background: #C21438;
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px 30px;
 }
 
 .button_container{
     display: flex;
-    height: 450px
+    justify-content: space-between;
+    height: 400px;
+    width: 100%;
 }
 
+.left_column{
+    width: 78%;
+}
+
+.right_column{
+    width: 20%;
+}
